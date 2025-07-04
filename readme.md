@@ -1,25 +1,25 @@
-# 💸 Expense Tracker
+# 🌾 Agri Platform – Django Backend Project
 
-A responsive and user-friendly web application built with **React.js** that helps users track their personal expenses. Add, filter, and view your expenses in real-time — designed for simplicity and clarity.
+**Agri Platform** is a backend-focused web application built with **Django**. It aims to simplify agricultural operations by enabling farmers or stakeholders to manage crop data, monitor production, and interact through a central system. This project focuses on **core logic, database models, and admin management** — with minimal frontend.
 
 ---
 
 ## 📌 Features
 
-- ➕ Add new expenses with title, amount, and date
-- 📆 Filter expenses by year
-- 🧾 View a list of all expenses dynamically
-- ❌ Delete expenses (if implemented)
-- 🧠 Built using React components and hooks
+- 🧾 Add and manage crop or product data
+- 🔐 User authentication (login/register system)
+- 📊 Built-in Django admin panel to manage all records
+- 🛠️ Easily extendable backend logic for market data, weather integration, etc.
+- 🧠 Designed for backend learning and model-view control
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **Frontend Framework:** React.js
-- **Language:** JavaScript (with JSX)
-- **Styling:** CSS
-- **Components Used:** Functional components with `useState` and `props`
+- **Backend Framework:** Django (Python)
+- **Frontend:** Minimal HTML via Django templates
+- **Database:** SQLite (default)
+- **Tools:** Django Admin, CSRF security, Form handling
 
 ---
 
@@ -28,38 +28,68 @@ A responsive and user-friendly web application built with **React.js** that help
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/Baumendhra/expense-tracker.git
-cd expense-tracker
+git clone https://github.com/Baumendhra/agri_platform.git
+cd agri_platform
 
-2. Install Dependencies
+2. Set Up Virtual Environment
 
-npm install
+python -m venv venv
+# Activate:
+# Windows:
+venv\Scripts\activate
+# macOS/Linux:
+source venv/bin/activate
 
-3. Run the App Locally
+3. Install Dependencies
 
-npm start
+pip install -r requirements.txt
 
-Open your browser and visit: http://localhost:3000
+4. Apply Migrations
+
+python manage.py makemigrations
+python manage.py migrate
+
+5. Run the Server
+
+python manage.py runserver
+
+Go to: http://127.0.0.1:8000
 
 
 ---
 
-📂 Project Structure
+📂 Project Structure (Backend Focus)
 
-expense-tracker/
-├── public/
-│   └── index.html
-├── src/
-│   ├── components/
-│   │   ├── ExpenseForm.jsx        # Form to add new expenses
-│   │   ├── ExpenseItem.jsx        # Renders a single expense
-│   │   ├── ExpenseList.jsx        # Lists all expenses
-│   │   └── ExpenseFilter.jsx      # Dropdown to filter by year
-│   ├── App.jsx                    # Root component
-│   ├── index.js                   # Entry point
-│   └── App.css                    # Main styling file
-├── package.json
-└── README.md
+agri_platform/
+├── agri_platform/           # Main project config (settings, urls, wsgi)
+├── agriapp/                 # Core app for models, views, admin, forms
+│   ├── models.py            # Crop/Product data models
+│   ├── views.py             # Backend logic and views
+│   ├── admin.py             # Django admin setup
+│   ├── forms.py             # Django form handling
+│   ├── templates/           # Minimal frontend (optional)
+│   └── static/              # Optional styling/js
+├── db.sqlite3               # Local database
+├── manage.py
+└── requirements.txt
+
+> Replace agriapp/ with your actual app name.
+
+
+
+
+---
+
+🛡️ Admin Panel
+
+URL: http://127.0.0.1:8000/admin
+
+Use a superuser to manage crops, users, and models visually.
+
+
+To create a superuser:
+
+python manage.py createsuperuser
 
 
 ---
@@ -67,31 +97,9 @@ expense-tracker/
 🙋‍♂️ Author
 
 Baumendhra K
-📍 Trichy, Tamil Nadu
+🎓 Backend-Focused Developer
 📧 baumendhra@gmail.com
 🔗 GitHub • LinkedIn
-
-
----
-
-🤝 Contribution
-
-Contributions are welcome!
-
-Steps:
-
-1. Fork this repository
-
-
-2. Create a branch (git checkout -b feature-name)
-
-
-3. Make changes and commit
-
-
-4. Open a Pull Request
-
-
 
 
 ---
@@ -103,4 +111,6 @@ This project is licensed under the MIT License
 
 ---
 
-⭐ If you like this project, please give it a star on GitHub!
+✅ Note: Frontend is intentionally kept minimal to highlight backend logic. You are encouraged to expand it with React, Vue, or Django Templates later.
+
+⭐ If you find this helpful, give it a star on GitHub!
